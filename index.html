@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Portfolio</title>
+    <link rel="icon" type="https://yt3.googleusercontent.com/el-J8sRexslLpkv4OKl8bx3F8H0IxVaAnBITPZUTVZa_tqvng4GuZ2DN9Q4NyUxQH5nNOEDC0Q=s900-c-k-c0x00ffffff-no-rj" href="logo.png"> <!-- Tab icon -->
+    <style>
+        /* ======== Embedded CSS ======== */
+
+        /* General Reset */
+        body {
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(https://static01.nyt.com/images/2021/12/14/sports/14nba-curry-threes-new/14nba-curry-threes-new-mediumSquareAt3X-v2.jpg); c=16x9&q=h_833,w_1480,c_fill;
+            background-size: cover;
+            color: #333;
+        }
+
+        .h2 {
+            background-color: #3D215C;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #222;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbar .logo {
+            height: 50px;
+            animation: spinIn 1s ease-out;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            text-align: center;
+            color: #0000FF;
+            padding: 40px;
+            background: url("background.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1, 
+        .hero p, 
+        .profile-pic {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .highlight {
+            color: #FFFF00;
+            font-weight: bold;
+        }
+
+        /* Sections */
+        #about, #works, #contact {
+            padding: 5px;
+            max-width: 800px;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.85);
+            margin-top: 20px;
+            border-radius: 10px;
+            text-align: center;
+            animation: slideUp 1.5s ease-out;
+        }
+
+        /* Works */
+        .works-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .work-item {
+            flex: 1 1 45%;
+            text-align: left;
+        }
+
+        .work-item img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.5s ease;
+        }
+
+        .work-item img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Contact Form */
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 12px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .formtitle {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .checkbox-group,
+        .radio-group {
+            margin-top: 5px;
+            display: inline-flex;
+        }
+
+        .checkbox-group label,
+        .radio-group label {
+            font-weight: normal;
+            margin-right: 10px;
+        }
+
+        button {
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            padding: 12px;
+            width: 100%;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+        h2 {
+            background-color: #A2AADB;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes spinIn {
+            from { transform: rotate(-360deg) scale(0); opacity: 0; }
+            to { transform: rotate(0) scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <img src="logo.png" alt="Student Logo" class="logo">
+            <ul class="nav-links">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#works">My Works</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="icon.png" alt="Profile Picture" class="profile-pic">
+        <h1>Hello, I'm <span class="highlight">Sean Tayag</span></h1>
+        <p>An aspiring OBMC student</p>
+    </section>
+
+    <section id="about">
+        <h2 class="h2">About Me</h2>
+        <p>Hi! I'm Sean, a student in OBMC for atleast 10 years. My favorite activity/event in OB is the Intramurals. In my free time, I like to listen music to set my mood and be chilled.
+
+        <iframe width="560" height="315" src="https://www.youtube.com/watch?v=r7F9mql1L44" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        <p style="font-style: italic;">Attached above is a sample ‘This Is Me’ video, which you may use as a reference from your Grade 8 Second Quarter assessment.</p>
+    </section>
+
+    <section id="works">
+        <h2 class="h2">My Works</h2>
+        <div class="works-gallery">
+            <div class="work-item">
+                <a href="https://tinyurl.com/Q1Drill1Sample" target="_blank">
+                    <img src="Work1.png" alt="Sample Work" style="border: 2px dashed black;">
+                </a>
+                <p style="text-align: center" class="formtitle">My Personal Slambook</p>
+            </div>
+            <div class="work-item">
+                <ul>
+                    <li>✔ HTML & CSS Projects</li>
+                    <li>✔ Personal Blog</li>
+                    <li>✔ School Portfolio</li>
+                </ul>
+            </div>
+
+            <div class="work-item">
+                <a href="https://tinyurl.com/ICT9Q1SW1Sample" target="_blank">
+                    <img src="Work2.png" alt="Sample Work" style="border: 2px dashed black;">
+                </a>
+                <p style="text-align: center;" class="formtitle">My Top 3 Best Movie</p>
+            </div>
+            <div class="work-item">
+                <ul>
+                    <li>✔ HTML & CSS Projects</li>
+                    <li>✔ HTML Forms</li>
+                    <li>✔ List, Links, and Images</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="h2">Contact Me</h2>
+        <div class="form-container">
+            <form>
+                <label class="formtitle" for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Sean Tayag" required><br>
+
+                <label class="formtitle" for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="tayag.sp@obmontessori.edu.ph" required><br>
+
+                <label class="formtitle">How did you find me?</label>
+                <div class="radio-group">
+                    <input type="radio" id="rate1" name="rating" value="1" required>
+                    <label for="rate1">Facebook</label>
+
+                    <input type="radio" id="rate2" name="rating" value="2">
+                    <label for="rate2">Google</label>
+
+                    <input type="radio" id="rate3" name="rating" value="3">
+                    <label for="rate3">Friends</label>
+                </div><br><br>
+
+                <label class="formtitle">Services Interested In:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="action" name="genre" value="Action">
+                    <label for="action">Web Design</label>
+
+                    <input type="checkbox" id="comedy" name="genre" value="Comedy">
+                    <label for="comedy">Graphic Design</label>
+
+                    <input type="checkbox" id="drama" name="genre" value="Drama">
+                    <label for="drama">Robotics</label>
+                </div><br><br>
+
+                <label class="formtitle" for="platform">Rate my Portfolio</label>
+                <select id="platform" name="platform" required>
+                    <option value="">-- Select Rating --</option>
+                    <option value="1">🏀</option>
+                    <option value="2">🏀🏀</option>
+                    <option value="3">🏀🏀🏀</option>
+                    <option value="4">🏀🏀🏀🏀</option>
+                    <option value="5">🏀🏀🏀🏀🏀</option>
+                </select><br><br>
+
+                <label class="formtitle" for="reason">Any Feedback?</label>
+                <textarea id="reason" name="reason" rows="4" placeholder="feedback here..." required></textarea><br>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Sean. All rights reserved</p>
+    </footer>
+</body>
+</html>
+
