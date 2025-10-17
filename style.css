@@ -1,0 +1,210 @@
+
+body {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(wallpaper.gif);
+    background-size: cover;
+    color: #333;
+}
+
+.h2 {
+    background-color: #3D215C;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #222;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar .logo {
+    height: 50px;
+    animation: spinIn 1s ease-out; /* animate logo */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  text-align: center;
+  color: #FCF2F2; 
+  padding: 40px;
+  background: url("background.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* black overlay */
+}
+
+.hero * {
+  position: relative;
+  z-index: 1; /* keep text above the overlay */
+}
+
+.hero h1, 
+.hero p, 
+.profile-pic {
+  animation: fadeIn 2s ease-in-out;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.highlight {
+    color: #E62CC6;
+    font-weight: bold;
+}
+
+/* About, Works, Contact Sections */
+#about, #works, #contact {
+    padding: 5px;
+    max-width: 800px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.85); /* 85% opaque */
+    margin-top: 20px;
+    border-radius: 10px;
+    text-align: center;
+    animation: slideUp 1.5s ease-out;
+}
+
+/* Works */
+.works-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.work-item {
+    flex: 1 1 45%;
+    text-align: left;
+}
+
+.work-item img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+
+.work-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Form */
+.form-container {
+      background-color: rgba(255, 255, 255, 0.9); /* slightly transparent */
+      padding: 30px;
+      border-radius: 12px;
+      width: 500px;
+      margin: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+.formtitle {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+textarea {
+      resize: vertical;
+    }
+
+.checkbox-group,
+.radio-group {
+      margin-top: 5px;
+      display: inline-flex;
+    }
+
+.checkbox-group label,
+.radio-group label {
+      font-weight: normal;
+      margin-right: 10px;
+    }
+
+button {
+      margin-top: 20px;
+      background-color: #007bff;
+      color: white;
+      padding: 12px;
+      width: 100%;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+button:hover {
+      background-color: #0056b3;
+    }
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+h2{
+    background-color: #A2AADB;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* ================= Animations ================= */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes spinIn {
+  from { transform: rotate(-360deg) scale(0); opacity: 0; }
+  to { transform: rotate(0) scale(1); opacity: 1; }
+}
